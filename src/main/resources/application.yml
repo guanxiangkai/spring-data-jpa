@@ -1,10 +1,18 @@
 server:
   port: 9999
 
+database:
+  name: sso
+
 spring:
   datasource:
-    url: jdbc:postgresql://101.132.72.148:5432/sso?tcpKeepAlive=true&reWriteBatchedInserts=true&ApplicationName=nacos_java
+    url: jdbc:postgresql://101.132.72.148:5432/${database.name}?tcpKeepAlive=true&reWriteBatchedInserts=true&ApplicationName=nacos_java
     username: postgres
     password: Guan1014
+
   jpa:
+    show-sql: true  # 显示sql语句
     generate-ddl: true
+    hibernate:
+      ddl-auto: update # 取值create/create-drop时，会根据Entity生成表之后，再使用import.sql文件导入初始化数据; 为update时，则执行的是 data.sql
+      format_sql: true # 格式化sql语句

@@ -7,6 +7,7 @@ import com.rbtxm.springdatajpa.pojo.vo.UserVO;
 import com.rbtxm.springdatajpa.repository.UserRepository;
 import com.rbtxm.springdatajpa.service.IUserService;
 import jakarta.annotation.Resource;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -17,6 +18,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+@Slf4j
 @Service("iUserService")
 public class UserServiceImpl implements IUserService {
     @Resource
