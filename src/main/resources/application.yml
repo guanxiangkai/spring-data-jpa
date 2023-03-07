@@ -1,0 +1,10 @@
+server:
+  port: 9999
+
+spring:
+  datasource:
+    url: jdbc:postgresql://101.132.72.148:5432/sso?tcpKeepAlive=true&reWriteBatchedInserts=true&ApplicationName=nacos_java
+    username: postgres
+    password: Guan1014
+  jpa:
+    generate-ddl: true

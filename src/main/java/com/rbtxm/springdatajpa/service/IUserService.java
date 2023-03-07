@@ -7,7 +7,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 public interface IUserService {
-    UserVO addUser(UserDTO user);
+    UserVO addUser(UserDTO userDTO);
 
-    Page<UserVO> getUserPage(Pageable pageable);
+    Page<UserVO> getUserPage(UserPageDTO userPageDTO);
 }

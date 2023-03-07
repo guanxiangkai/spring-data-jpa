@@ -11,29 +11,28 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(path = "/api/v1")
+@RequestMapping(path = "/api")
 public class UserController {
     @Resource
     private IUserService iUserService;
 
     /**
      * 保存用户
-     * @param user
+     * @param userDTO
      * @return
      */
-    @PostMapping(path = "addUser",consumes = {MediaType.APPLICATION_JSON_VALUE})
-    public UserVO addUser(@RequestBody UserDTO user) {
-        return iUserService.addUser(user);
+    @PostMapping(path = "/addUser")
+    public UserVO addUser(@RequestBody UserDTO userDTO) {
+        return iUserService.addUser(userDTO);
     }
 
     /**
      * 根据分页信息查询用户
-     * @param pageable
+     * @param userPageDTO
      * @return
      */
-    @GetMapping(path = "getUserPage")
-    @ResponseBody
-    public Page<UserVO> getUserPage(Pageable pageable) {
-        return iUserService.getUserPage(pageable);
+    @GetMapping(path = "/getUserPage")
+    public Page<UserVO> getUserPage(@RequestBody UserPageDTO userPageDTO) {
+        return iUserService.getUserPage(userPageDTO);
     }
 }
