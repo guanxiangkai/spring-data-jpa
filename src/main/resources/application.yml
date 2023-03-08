@@ -6,7 +6,7 @@ database:
 
 spring:
   datasource:
-    url: jdbc:postgresql://101.132.72.148:5432/${database.name}?tcpKeepAlive=true&reWriteBatchedInserts=true&ApplicationName=nacos_java
+    url: jdbc:postgresql://127.0.0.1:5432/${database.name}?tcpKeepAlive=true&reWriteBatchedInserts=true&ApplicationName=nacos_java
     username: postgres
     password: Guan1014
 
